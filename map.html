@@ -1,0 +1,177 @@
+<html>
+
+<head>
+
+    <!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<header>
+
+    <TITLE>Nova City</TITLE>
+    <link rel="shortcut icon" href="img/logo_nova_city.png" type="image/x-icon">
+
+    <nav>
+
+
+        <div class="nav_barre">
+
+            <div>
+                <a href="index.html">
+                    <img class="icone_nav_home" src="img/home.png ">
+                </a>
+            </div>
+            <div>
+                <img class="icone_nav_bluetooth " src="img/Bluetooth.png ">
+            </div>
+            <div>
+                <img class="icone_nav_wifi " src="img/wifi.png ">
+            </div>
+            <div>
+                <img class="icone_nav_batterie " src="img/batterie.png ">
+            </div>
+            <div id="time_live">
+
+                <script>
+                    function startTime() {
+                        const today = new Date();
+                        let h = today.getHours();
+                        let m = today.getMinutes();
+                        m = checkTime(m);
+
+                        document.getElementById('time_live').innerHTML = h + ":" + m;
+                        setTimeout(startTime, 1000);
+                    }
+
+                    function checkTime(i) {
+                        if (i < 10) {
+                            i = "0" + i
+                        }; // add zero in front of numbers < 10
+                        return i;
+                    }
+                </script>
+
+            </div>
+            <div id="date_live">
+
+
+                <script>
+                    n = new Date();
+                    y = n.getFullYear();
+                    m = n.getMonth() + 1;
+                    d = n.getDate();
+                    document.getElementById("date_live").innerHTML = d + "/" + m + "/" + y;
+                </script>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+
+</header>
+
+<BODY onload="startTime()">
+
+
+    <img src="img/windows10.png " class="background-img ">
+
+
+    <div>
+
+        <div class="button_carte_div">
+            <div>
+                <button class="button_carte" onclick="carte('back');">Fond</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('urbain');">Ville</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('important');">Zone Importante</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('bloc');">Bâtiment</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('road');">Route</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('name-road');">Nom rue</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('forest');">Forêt</button>
+            </div>
+            <div>
+                <button class="button_carte" onclick="carte('field');">Champs</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="map">
+        <div id="back" style="display:block;">
+            <img class="map_img" src="map/back.png">
+        </div>
+        <div id="forest" style="display:block;">
+            <img class="map_img" src="map/forest.png">
+        </div>
+        <div id="urbain" style="display:block;">
+            <img class="map_img" src="map/urbain.png">
+        </div>
+        <div id="field" style="display:block;">
+            <img class="map_img" src="map/field.png">
+        </div>
+        <div id="important" style="display:block;">
+            <img class="map_img" src="map/important.png">
+        </div>
+        <div id="bloc" style="display:block;">
+            <img class="map_img" src="map/bloc.png">
+        </div>
+        <div id="road" style="display:block;">
+            <img class="map_img" src="map/road.png">
+        </div>
+        <div id="name-road" style="display:block;">
+            <img class="map_img" src="map/name-road.png">
+        </div>
+    </div>
+
+    <script>
+        function carte(info) {
+            var elem = document.getElementById(info);
+            if (elem.style.display === "none") {
+                elem.style.display = "block";
+            } else {
+                elem.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+
+</html>
